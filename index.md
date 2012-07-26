@@ -1,36 +1,38 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: For Fun!
+tagline: Less is More
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+This is Emerson from Shanghai. I have a repo just called [aa](https://github.com/jyz19880823/aa) 
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
 
-## Update Author Attributes
+## First time with Jekyll
 
-In `_config.yml` remember to specify your own data:
+I do not know what to write here. just a gist.
+
+    require "nokogiri"
+    require "spidr"
+    require "open-uri"
+    def yue
+      Spidr.site("http://www.somedomain.com") do |spider|
+        spider.every_html_page  do |page|
+          name = page.title
+          doc = Nokogiri::HTML(page.body)
+              doc.css(".left_content2").each do |a|
+                contents = a.content
+                Post.create(:name=>name,:content=>contents)
+              end
+        end
+      end
+    end
+
+this is a spider to collect something from the web.
     
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+    abs
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
+###Posts List
 
 <ul class="posts">
   {% for post in site.posts %}
